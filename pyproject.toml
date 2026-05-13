@@ -1,0 +1,25 @@
+[project]
+name = "ontology-extractor"
+version = "0.1.0"
+description = "A CLI tool for extracting ontology to Neo4j"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "click>=8.1.7",
+    "fastapi>=0.115.0",
+    "neo4j>=5.20.0",
+    "neo4j-graphrag[openai]>=1.15.0",
+    "openai>=1.30.0",
+    "pydantic>=2.7.0",
+    "pydantic-settings>=2.14.0",
+    "python-dotenv>=1.0.1",
+    "uvicorn[standard]>=0.30.0",
+]
+
+[project.scripts]
+ontology-cli = "ontology_extractor.main:cli"
+ontology-api = "ontology_extractor.api:start"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
